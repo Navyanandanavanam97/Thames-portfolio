@@ -1,24 +1,44 @@
 @import './variables.scss';
 @import url('https://fonts.googleapis.com/css2?family=Jost:ital@0;1&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
 @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 
 * {
-    
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-body {
-    height: 100vh;
-    width: 100%;
-    min-width: 1150px;
-    background: rgb(2,0,36);
-   
+@mixin setPosition ($left: 0, $right: 0, $bottom: 0, $top: 0) {
+    position: absolute;
+    left: $left;
+    right: $right;
+    bottom: $bottom;
+    top: $top;
 }
 
+@mixin hover {
+    background-color: red;
+    @content;
+}
+
+.position {
+    @include setPosition($left: 10px, $right: 5px);
+
+    @include hover() {
+        color: black;
+    }
+
+}
+
+body {
+    overflow-x: hidden;
+    // height: 100vh;
+    // width: 100%;
+    // min-width: 1150px;
+    // background: rgb(2, 0, 36);
+}
+        
 .intro {
     font-family: "Poppins", sans-serif;
     background: url('./img/slider-bg.jpg');
@@ -29,8 +49,8 @@ body {
 
 .intro {
     a {
-    color: #717171;
-    text-decoration: none;
+        color: white;
+        text-decoration: none;
     }
 }
 
@@ -49,7 +69,7 @@ li {
         height: 100%;
         position: relative;
     }
-} 
+}
 
 .main-menu {
     li {
@@ -63,35 +83,34 @@ li {
             font-weight: 500;
             padding: 0 30px;
             font-size: 18px;
-            &:hover{
+
+            &:hover {
                 color: $green;
             }
         }
-    }
-}
 
-
-.main-menu {
-    li {
         .download-btn {
             padding: 12px 28px 11px 28px;
             border: 1px solid $green ;
             border-radius: 5px;
             font-size: 15px;
+
+            &:hover {
+                background-color: $green;
+            }
         }
+
+        &:hover {
+            .mega-dropdown {
+                top: 50px;
+                visibility: visible;
+                opacity: 1;
+                left: -216px;
+            }
+        }
+
     }
 }
-
-.main-menu {
-    li {
-        .download-btn {
-           &:hover {
-            background-color: $green;
-           }
-        }
-    }
-}
-
 
 .mega-dropdown {
     display: flex;
@@ -101,82 +120,56 @@ li {
     background-color: #80db66;
     position: absolute;
     left: 0;
-    top: 90px;
-    border-radius: 0 0 10px 10px ;
-    box-shadow: 0 4px 3px rgba(0,0,0,0.2);
+    top: 5px;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 4px 3px rgba(0, 0, 0, 0.2);
     visibility: hidden;
     opacity: 0;
-    transition: opacity 0.5s, top 0.5s;
-}
+    transition: 0.5s;
 
-.main-menu {
-    li {
-        &:hover {
-            .mega-dropdown {
-                top: 70px;
-                visibility: visible;
-                opacity: 1;
+    .mega-submenu {
+        width: 25%;
+        height: 80%;
+        margin: 20px;
+
+        h5 {
+            display: block;
+            padding: 10px 30px;
+            font-size: 0.9rem;
+            color: steelblue;
+        }
+
+        li {
+            a {
+                display: inline-block;
+                padding: 5px 30px;
+                font-size: 0.8rem;
+                transition: padding 0.5s, color 0.5s;
+
+                &:hover {
+                    color: rgb(190, 118, 50);
+                    padding-left: 50px;
+                }
+            }
+        }
+
+        img {
+            width: 180px;
+            padding: 10px 30px;
         }
     }
-}  
-}
-
-.mega-submenu {
-    width: 25%;
-    height: 80%;
-    margin: 20px;
 }
 
 .mega-submenu:not(:first-child) {
-    border-left: 1px solid rgba(129, 174, 211,0.5);
+    border-left: 1px solid rgba(129, 174, 211, 0.5);
 }
 
-.mega-submenu {
-    h5 {
-        display: block;
-        padding: 10px 30px;
-        font-size: 0.9rem;
-        color: steelblue;
-    }
-}
-
-.mega-submenu {
-    li {
-        a {
-            display: inline-block;
-            padding: 5px 30px;
-            font-size: 0.8rem;
-            transition: padding 0.5s, color 0.5s;
-        }
-    }
-}
-
-.mega-submenu {
-    li {
-        a {
-
-            &:hover {
-                color: rgb(190, 118, 50);
-                padding-left: 50px;
-            }
-        }
-    }
-}
-
-.mega-submenu {
-    img {
-        width: 180px;
-        padding: 10px 30px;
-    }
-} 
 
 .banner {
     .intro-name {
         padding-left: 15rem;
-    }
-}
-.banner {
-    .intro-name {
+        margin-bottom: 10rem;
+
         .hello {
             font-family: "jost-medium-font";
             font-weight: 400;
@@ -184,91 +177,202 @@ li {
             letter-spacing: 10px;
             font-size: 40px;
         }
-    }
-}
 
-.banner {
-    .intro-name {
         .name {
             font-family: "jost-medium-font";
-            font-weight: 400;
-            font-size: 100px;
+            font-weight: 200;
+            font-size: 149px;
             color: white;
+            line-height: 9.2rem;
         }
+
+        .animated-text {
+            font-size: 24px;
+            font-weight: 600;
+            min-width: 200px;
+            color: white;
+
+            span {
+                position: relative;
+
+                &::before {
+                    content: "Youtuber";
+                    color: $green;
+                    animation: words 20s infinite;
+                }
+
+                &::after {
+
+                    content: "";
+                    position: absolute;
+                    height: 100%;
+                    border-left: 1px solid $green;
+                    right: -8px;
+                    animation: cursor .8s infinite, typing 20s steps(14) infinite;
+                }
+            }
+        }
+
+        .hello-btn {
+            background-color: $green;
+            padding: 14px 40px 13px 40px;
+            font-size: 25px;
+            font-weight: 400;
+            color: white;
+            border-radius: 5px;
+            outline: 0 none;
+            text-transform: capitalize;
+            text-decoration: none;
+        }
+    }
+
+    .person {
+        .two-stars-icon {
+            margin-left: 23rem;
+        }
+
+        .line-icon {
+            margin-left: 36rem;
+            margin-top: -42rem;
+        }
+    }
+    @media screen and (max-width:576px){
+        
+            .intro-name{
+                padding-left: 55px;
+            }
+        
+    }
+
+//     @media screen and (mn-idth:992px){
+        
+//        height: 120vh;
+    
+// }
+}
+
+@keyframes cursor {
+    to {
+        border-left: 1px solid#ff7f5000;
     }
 }
 
-// body {
-//     margin: 0;
-//     padding: 0;
-//     background-color: #2f3542;
-//     color: white;
-//     height: 100vh;
-//     display: flex;
-//     align-items: center;
-//     justify-content: center;
-// }
+@keyframes words {
 
-// .animated-text {
-//     font-size: 34px;
-//     font-weight: 600;
-//     min-width: 200px;
-// }
+    0%,
+    20% {
+        content: "Youtuber";
+    }
 
-// .animated-text span {
-//     position: relative;
-// }
+    21%,
+    40% {
+        content: "Student";
+    }
 
-// .animated-text span::before {
-//     content: "Youtuber";
-//     color: $green;
-//     animation: words 20s infinite;
-// }
+    41%,
+    60% {
+        content: "Free_Lancer";
+    }
 
-// .animated-text span::after {
-//     content: "";
-//     position: absolute;
-//     width: calc(100% +8px);
-//     height: 100%;
-//     background-color: #2f3542;
-//     border-left: 1px $green;
-//     right: -8px;
-//     animation: cursor .8s infinite, typing 20s steps(14) infinite;
-// }
+    61%,
+    80% {
+        content: "Blogger";
+    }
 
-// @keyframes cursor {
-//     to{
-//         border-left: 1px solid#ff7f5000;
-//     }
-// }
+    81%,
+    100% {
+        content: "Developer";
+    }
+}
 
-// @keyframes words {
-//     0%,20% {
-//         content: "Youtuber";
-//     }
+@keyframes typing {
 
-//     21%,40% {
-//         content: "Software_Enginner";
-//     }
+    10%,
+    15%,
+    30%,
+    50%,
+    55%,
+    70%,
+    75%,
+    90%,
+    95% {
+        width: 0;
+    }
 
-//     41%,60% {
-//         content: "Free_Lancer";
-//     }
+    5%,
+    20%,
+    25%,
+    40%,
+    45%,
+    60%,
+    65%,
+    80%,
+    85% {
+        width: calc(100% + 8px);
+    }
+}
 
-//     61%,80% {
-//         content: "Blogger";
-//     }
 
-//     81%,100% {
-//         content: "Developer";
-//     }
-// }
+.features {
+    background-color: $section-bg;
+    .features-sub {
+        padding-top: 170px;
+        padding-bottom: 160px;
 
-// @keyframes typing {
-//     10%,15%,30%,50%,55%,70%,75%,90%,95% {
-//         width: 0;
-//     }
-//     5%,20%,25%,40%,45%,60%,65%,80%,85% {
-//         width: calc(100% + 8px);
-//     }
-// }
+        .feature-item {
+            background-color: white;
+            box-shadow: 0px 5px 60px 0px rgba(2, 24, 93, 0.08);
+            padding: 55px 48px 35px 48px;
+            transition: all ease-in-out 0.4s;
+            border-radius: 15px;
+
+            .feature-content {
+                font-family: "Open Sans", sans-serif;
+                font-size: 18px;
+                font-weight: 400;
+                line-height: 1.67;
+                color: #4d4d5c;
+            }
+        }
+
+        .feature-sub-heading {
+            font-size: 24px;
+            margin-bottom: 22px;
+            color: #2e2e37;
+            font-weight: 700;
+
+        }
+
+        .smart-item {
+            top: 4rem;
+            background-color: white;
+            box-shadow: 0px 5px 60px 0px rgba(2, 24, 93, 0.08);
+            padding: 55px 48px 35px 48px;
+            transition: all ease-in-out 0.4s;
+            border-radius: 15px;
+
+            .feature-content {
+                font-family: "Open Sans", sans-serif;
+                font-size: 18px;
+                font-weight: 400;
+                line-height: 1.67;
+                color: #4d4d5c;
+            }
+        }
+    }
+
+    .slant-name {
+        font-size: 300px;
+        bottom: -172px;
+        right: -30px;
+        color: #f0f7fe;
+        z-index: 9;
+    }
+}
+
+
+
+.about {
+    background-image: url('./img/about-img-shape.jpg');
+    z-index: 99;
+}
