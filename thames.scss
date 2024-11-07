@@ -33,10 +33,7 @@
 
 body {
     overflow-x: hidden;
-    // height: 100vh;
-    // width: 100%;
-    // min-width: 1150px;
-    // background: rgb(2, 0, 36);
+
 }
 
 .intro {
@@ -470,13 +467,49 @@ li {
     z-index: 99;
     .about {
         padding:12rem 0 ;
+        .first-part{
+            &::before {
+                position: absolute;
+                content: "";
+                width: 45px;
+                height: 64px;
+                background: $green;
+                right: 217px;
+                bottom: -32px;
+                z-index: 111;
+            }
+        }
+        .shape-1 {
+            width: 133px;
+            height: 134px;
+            border: 4px solid $green;
+            right: 70px;
+            top: -25px;
+            z-index: -9;
+        }
+        .shape-2 {
+            background: $green;
+            width: 91px;
+            height: 91px;
+            top: 70px;
+            left: -12px;
+        }
+        .download-img {
+            left: -75px;
+            bottom: -125px;
+            animation: rotation 10s infinite;
+            .download-icon {
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
     }
 }
 
 .m-logo {
     img {
         margin-top: 1rem;
-        /* height: 60px; */
         width: 153px;
         margin-left: 11px;
     }
