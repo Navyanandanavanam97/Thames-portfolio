@@ -20,6 +20,20 @@ body {
   overflow-x: hidden;
 }
 
+.position {
+  position: absolute;
+  left: 10px;
+  right: 5px;
+  bottom: 0;
+  top: 0;
+  background-color: red;
+  color: black;
+}
+
+body {
+  overflow-x: hidden;
+}
+
 .intro {
   font-family: "Poppins", sans-serif;
   background: url("./img/slider-bg.jpg");
@@ -344,7 +358,7 @@ li {
   height: 64px;
   background: #80db66;
   right: 217px;
-  bottom: -32px;
+  bottom: 56px;
   z-index: 111;
 }
 .about-me .about .shape-1 {
@@ -364,13 +378,129 @@ li {
 }
 .about-me .about .download-img {
   left: -75px;
-  bottom: -125px;
+  bottom: -41px;
   animation: rotation 10s infinite;
 }
 .about-me .about .download-img .download-icon {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+}
+.about-me .about .title span {
+  font-size: 18px;
+  letter-spacing: 7px;
+  color: #80db66;
+  font-weight: 500;
+}
+.about-me .about .title h2 {
+  font-size: 60px;
+  margin-bottom: 30px;
+  color: #2e2e37;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-top: 0;
+  font-family: "jost-medium-font";
+}
+.about-me .about .about-content p {
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.67;
+  color: #4d4d5c;
+  margin-bottom: 25px;
+}
+.about-me .about .about-content .about-info {
+  padding: 25px 0px 20px;
+  margin-top: 25px;
+  border-top: 1px solid #bcc7d3;
+  border-bottom: 1px solid #bcc7d3;
+}
+.about-me .about .about-content .about-info li {
+  padding-right: 50px;
+}
+.about-me .about .about-content .about-info li p {
+  font-family: "jost-medium-font";
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.67;
+  color: #4d4d5c;
+  margin-bottom: 6px;
+}
+.about-me .about .about-content .about-info .details p {
+  font-weight: 700;
+}
+.about-me .about .about-content .about-footer .signature h6 {
+  margin-left: 28px;
+  font-size: 21px;
+}
+.about-me .about .about-content .about-footer .signature span {
+  color: #9b9db1;
+  font-family: "Open Sans", sans-serif;
+  margin-left: 10px;
+  font-size: 15px;
+}
+.about-me .about-text-style {
+  font-size: 310px;
+  bottom: 165px;
+  right: 68%;
+  z-index: -1;
+}
+.about-me .about-text-style span {
+  color: #e2ecf6;
+  transform: rotate(-90deg);
+}
+.about-me .portfolio-wrapper .porto-title span {
+  color: #80db66;
+  font-size: 22px;
+  letter-spacing: 7px;
+  font-weight: 600;
+}
+.about-me .portfolio-wrapper .porto-title h2 {
+  color: #2e2e37;
+  font-weight: 600;
+  font-size: 60px;
+  font-family: "jost-medium-font";
+}
+.about-me .portfolio-wrapper .web {
+  margin-top: 80px;
+}
+.about-me .portfolio-wrapper .web .single-port {
+  padding-top: 48px;
+  padding-bottom: 38px;
+  border-top: 1px solid #c8ccd4;
+}
+.about-me .portfolio-wrapper .web .single-port .port-cat span {
+  text-transform: uppercase;
+  color: #9b9db1;
+}
+.about-me .portfolio-wrapper .web .single-port .design h3 {
+  font-size: 48px;
+  line-height: 1.2;
+}
+.about-me .portfolio-wrapper .web .single-port .pic .port-img {
+  opacity: 0;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+.about-me .portfolio-wrapper .web .single-port .pic .port-img:hover {
+  opacity: 1;
+  transform: rotate(-30deg);
+  border-radius: 10px;
+  width: 200px;
+  height: 200px;
+  padding-right: 10rem;
+}
+.about-me .portfolio-wrapper .web .single-port .pic .port-content {
+  font-size: 25px;
+  cursor: pointer;
+  color: #80db66;
+  border: 1px solid #bcc7d3;
+  width: 95px;
+  height: 95px;
+  line-height: 95px;
+  border-radius: 50%;
+}
+.about-me .portfolio-wrapper .web .single-port .pic .port-content span {
+  padding-left: 35px;
 }
 
 .m-logo img {
