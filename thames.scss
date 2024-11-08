@@ -33,12 +33,28 @@
 
 body {
     overflow-x: hidden;
-    // height: 100vh;
-    // width: 100%;
-    // min-width: 1150px;
-    // background: rgb(2, 0, 36);
+
 }
-        
+
+@mixin hover {
+    background-color: red;
+    @content;
+}
+
+.position {
+    @include setPosition($left: 10px, $right: 5px);
+
+    @include hover() {
+        color: black;
+    }
+
+}
+
+body {
+    overflow-x: hidden;
+
+}
+
 .intro {
     font-family: "Poppins", sans-serif;
     background: url('./img/slider-bg.jpg');
@@ -98,6 +114,7 @@ li {
             &:hover {
                 background-color: $green;
             }
+
         }
 
         &:hover {
@@ -110,6 +127,65 @@ li {
         }
 
     }
+}
+
+.download {
+    .download-btn {
+        @media screen and (max-width:576px) {
+            border: 1px solid #80db66;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: 400;
+            text-align: center;
+
+            &:hover {
+                background-color: $green;
+            }
+        }
+
+        span {
+            font-size: 13px;
+            font-weight: 400;
+            text-align: center;
+        }
+    }
+
+    button {
+        padding: 0;
+
+        .navbar-toggler-icon {
+
+            .bars {
+                color: $green !important;
+            }
+        }
+
+    }
+}
+
+.modal-content {
+    height: 855px;
+
+    .modal-header {
+        background-color: $green;
+    }
+
+    .modal-body {
+        @media screen and (max-width:576px) {
+            height: 100%;
+            background-color: $green;
+
+            li {
+                padding: 10px 10px;
+
+                a {
+                    color: black;
+                }
+            }
+        }
+    }
+
+
 }
 
 .mega-dropdown {
@@ -137,6 +213,7 @@ li {
             padding: 10px 30px;
             font-size: 0.9rem;
             color: steelblue;
+
         }
 
         li {
@@ -167,8 +244,17 @@ li {
 
 .banner {
     .intro-name {
-        padding-left: 15rem;
-        margin-bottom: 10rem;
+        @media screen and (min-width:992px) {
+
+            padding-left: 7rem;
+            margin-bottom: 10rem;
+
+        }
+
+        @media screen and (max-width:576px) {
+            text-align: center;
+        }
+
 
         .hello {
             font-family: "jost-medium-font";
@@ -176,6 +262,13 @@ li {
             color: $green;
             letter-spacing: 10px;
             font-size: 40px;
+
+            @media screen and (max-width:576px) {
+
+                font-size: 22px;
+                // text-align: center;
+                padding-top: 8rem;
+            }
         }
 
         .name {
@@ -184,6 +277,13 @@ li {
             font-size: 149px;
             color: white;
             line-height: 9.2rem;
+
+            @media screen and (max-width:576px) {
+
+                font-size: 69px;
+                // text-align: center;
+            }
+
         }
 
         .animated-text {
@@ -223,6 +323,11 @@ li {
             outline: 0 none;
             text-transform: capitalize;
             text-decoration: none;
+
+            @media screen and (max-width:576px) {
+                padding: 7px 16px 8px 16px;
+
+            }
         }
     }
 
@@ -236,19 +341,8 @@ li {
             margin-top: -42rem;
         }
     }
-    @media screen and (max-width:576px){
-        
-            .intro-name{
-                padding-left: 55px;
-            }
-        
-    }
 
-//     @media screen and (mn-idth:992px){
-        
-//        height: 120vh;
-    
-// }
+
 }
 
 @keyframes cursor {
@@ -315,6 +409,7 @@ li {
 
 .features {
     background-color: $section-bg;
+
     .features-sub {
         padding-top: 170px;
         padding-bottom: 160px;
@@ -325,6 +420,11 @@ li {
             padding: 55px 48px 35px 48px;
             transition: all ease-in-out 0.4s;
             border-radius: 15px;
+
+            @media screen and (max-width:576px) {
+
+                margin-top: 8rem;
+            }
 
             .feature-content {
                 font-family: "Open Sans", sans-serif;
@@ -372,7 +472,223 @@ li {
 
 
 
-.about {
+.about-me {
     background-image: url('./img/about-img-shape.jpg');
     z-index: 99;
+
+    .about {
+        padding: 12rem 0;
+
+        .first-part {
+            &::before {
+                position: absolute;
+                content: "";
+                width: 45px;
+                height: 64px;
+                background: $green;
+                right: 217px;
+                bottom: 56px;
+                z-index: 111;
+            }
+        }
+
+        .shape-1 {
+            width: 133px;
+            height: 134px;
+            border: 4px solid $green;
+            right: 70px;
+            top: -25px;
+            z-index: -9;
+        }
+
+        .shape-2 {
+            background: $green;
+            width: 91px;
+            height: 91px;
+            top: 70px;
+            left: -12px;
+        }
+
+        .download-img {
+            left: -75px;
+            bottom: -41px;
+            animation: rotation 10s infinite;
+
+            .download-icon {
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        .title {
+            span {
+                font-size: 18px;
+                letter-spacing: 7px;
+                color: $green;
+                font-weight: 500;
+            }
+
+            h2 {
+                font-size: 60px;
+                margin-bottom: 30px;
+                color: #2e2e37;
+                font-weight: 600;
+                line-height: 1.2;
+                margin-top: 0;
+                font-family: "jost-medium-font";
+            }
+        }
+
+        .about-content {
+            p {
+                font-family: "Open Sans", sans-serif;
+                font-size: 18px;
+                font-weight: 400;
+                line-height: 1.67;
+                color: #4d4d5c;
+                margin-bottom: 25px;
+            }
+
+            .about-info {
+                padding: 25px 0px 20px;
+                margin-top: 25px;
+                border-top: 1px solid #bcc7d3;
+                border-bottom: 1px solid #bcc7d3;
+
+                li {
+                    padding-right: 50px;
+
+                    p {
+                        font-family: "jost-medium-font";
+                        font-size: 22px;
+                        font-weight: 500;
+                        line-height: 1.67;
+                        color: #4d4d5c;
+                        margin-bottom: 6px;
+                    }
+                }
+
+                .details {
+                    p {
+                        font-weight: 700;
+                    }
+
+                }
+            }
+
+            .about-footer {
+                .signature {
+                    h6 {
+                        margin-left: 28px;
+                        font-size: 21px;
+                    }
+
+                    span {
+                        color: #9b9db1;
+                        font-family: "Open Sans", sans-serif;
+                        margin-left: 10px;
+                        font-size: 15px;
+                    }
+                }
+            }
+        }
+    }
+
+    .about-text-style {
+        font-size: 310px;
+        bottom: 165px;
+        right: 68%;
+        z-index: -1;
+
+        span {
+            color: #e2ecf6;
+            // color: black;
+            transform: rotate(-90deg);
+        }
+    }
+
+    .portfolio-wrapper {
+        .porto-title {
+            span {
+                color: $green;
+                font-size: 22px;
+                letter-spacing: 7px;
+                font-weight: 600;
+            }
+
+            h2 {
+                color: #2e2e37;
+                font-weight: 600;
+                font-size: 60px;
+                font-family: "jost-medium-font";
+            }
+        }
+
+        .web {
+            margin-top: 80px;
+
+            .single-port {
+                padding-top: 48px;
+                padding-bottom: 38px;
+                border-top: 1px solid #c8ccd4;
+
+
+
+                .port-cat {
+                    span {
+                        text-transform: uppercase;
+                        color: #9b9db1;
+                    }
+                }
+
+                .design {
+                    h3 {
+                        font-size: 48px;
+                        line-height: 1.2;
+                    }
+                }
+
+                .pic {
+                    .port-img {
+                        opacity: 0;
+                        transition: transform 0.5s ease, opacity 0.5s ease;
+
+                        &:hover {
+                            opacity: 1;
+                            transform: rotate(-30deg);
+                            border-radius: 10px;
+                            width: 200px;
+                            height: 200px;
+                            padding-right: 10rem;
+                        }
+                    }
+
+                    .port-content {
+                        font-size: 25px;
+                        cursor: pointer;
+                        color: $green;
+                        border: 1px solid #bcc7d3;
+                        width: 95px;
+                        height: 95px;
+                        line-height: 95px;
+                        border-radius: 50%;
+
+                        span {
+                            padding-left: 35px;
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+}
+
+.m-logo {
+    img {
+        margin-top: 1rem;
+        width: 153px;
+        margin-left: 11px;
+    }
 }

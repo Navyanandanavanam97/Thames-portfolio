@@ -20,6 +20,20 @@ body {
   overflow-x: hidden;
 }
 
+.position {
+  position: absolute;
+  left: 10px;
+  right: 5px;
+  bottom: 0;
+  top: 0;
+  background-color: red;
+  color: black;
+}
+
+body {
+  overflow-x: hidden;
+}
+
 .intro {
   font-family: "Poppins", sans-serif;
   background: url("./img/slider-bg.jpg");
@@ -75,6 +89,49 @@ li {
   left: -216px;
 }
 
+@media screen and (max-width: 576px) {
+  .download .download-btn {
+    border: 1px solid #80db66;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: 400;
+    text-align: center;
+  }
+  .download .download-btn:hover {
+    background-color: #80db66;
+  }
+}
+.download .download-btn span {
+  font-size: 13px;
+  font-weight: 400;
+  text-align: center;
+}
+.download button {
+  padding: 0;
+}
+.download button .navbar-toggler-icon .bars {
+  color: #80db66 !important;
+}
+
+.modal-content {
+  height: 855px;
+}
+.modal-content .modal-header {
+  background-color: #80db66;
+}
+@media screen and (max-width: 576px) {
+  .modal-content .modal-body {
+    height: 100%;
+    background-color: #80db66;
+  }
+  .modal-content .modal-body li {
+    padding: 10px 10px;
+  }
+  .modal-content .modal-body li a {
+    color: black;
+  }
+}
+
 .mega-dropdown {
   display: flex;
   height: 300px;
@@ -120,9 +177,16 @@ li {
   border-left: 1px solid rgba(129, 174, 211, 0.5);
 }
 
-.banner .intro-name {
-  padding-left: 15rem;
-  margin-bottom: 10rem;
+@media screen and (min-width: 992px) {
+  .banner .intro-name {
+    padding-left: 7rem;
+    margin-bottom: 10rem;
+  }
+}
+@media screen and (max-width: 576px) {
+  .banner .intro-name {
+    text-align: center;
+  }
 }
 .banner .intro-name .hello {
   font-family: "jost-medium-font";
@@ -131,12 +195,23 @@ li {
   letter-spacing: 10px;
   font-size: 40px;
 }
+@media screen and (max-width: 576px) {
+  .banner .intro-name .hello {
+    font-size: 22px;
+    padding-top: 8rem;
+  }
+}
 .banner .intro-name .name {
   font-family: "jost-medium-font";
   font-weight: 200;
   font-size: 149px;
   color: white;
   line-height: 9.2rem;
+}
+@media screen and (max-width: 576px) {
+  .banner .intro-name .name {
+    font-size: 69px;
+  }
 }
 .banner .intro-name .animated-text {
   font-size: 24px;
@@ -171,17 +246,17 @@ li {
   text-transform: capitalize;
   text-decoration: none;
 }
+@media screen and (max-width: 576px) {
+  .banner .intro-name .hello-btn {
+    padding: 7px 16px 8px 16px;
+  }
+}
 .banner .person .two-stars-icon {
   margin-left: 23rem;
 }
 .banner .person .line-icon {
   margin-left: 36rem;
   margin-top: -42rem;
-}
-@media screen and (max-width: 576px) {
-  .banner .intro-name {
-    padding-left: 55px;
-  }
 }
 
 @keyframes cursor {
@@ -228,6 +303,11 @@ li {
   transition: all ease-in-out 0.4s;
   border-radius: 15px;
 }
+@media screen and (max-width: 576px) {
+  .features .features-sub .feature-item {
+    margin-top: 8rem;
+  }
+}
 .features .features-sub .feature-item .feature-content {
   font-family: "Open Sans", sans-serif;
   font-size: 18px;
@@ -264,7 +344,167 @@ li {
   z-index: 9;
 }
 
-.about {
+.about-me {
   background-image: url("./img/about-img-shape.jpg");
   z-index: 99;
+}
+.about-me .about {
+  padding: 12rem 0;
+}
+.about-me .about .first-part::before {
+  position: absolute;
+  content: "";
+  width: 45px;
+  height: 64px;
+  background: #80db66;
+  right: 217px;
+  bottom: 56px;
+  z-index: 111;
+}
+.about-me .about .shape-1 {
+  width: 133px;
+  height: 134px;
+  border: 4px solid #80db66;
+  right: 70px;
+  top: -25px;
+  z-index: -9;
+}
+.about-me .about .shape-2 {
+  background: #80db66;
+  width: 91px;
+  height: 91px;
+  top: 70px;
+  left: -12px;
+}
+.about-me .about .download-img {
+  left: -75px;
+  bottom: -41px;
+  animation: rotation 10s infinite;
+}
+.about-me .about .download-img .download-icon {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.about-me .about .title span {
+  font-size: 18px;
+  letter-spacing: 7px;
+  color: #80db66;
+  font-weight: 500;
+}
+.about-me .about .title h2 {
+  font-size: 60px;
+  margin-bottom: 30px;
+  color: #2e2e37;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-top: 0;
+  font-family: "jost-medium-font";
+}
+.about-me .about .about-content p {
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.67;
+  color: #4d4d5c;
+  margin-bottom: 25px;
+}
+.about-me .about .about-content .about-info {
+  padding: 25px 0px 20px;
+  margin-top: 25px;
+  border-top: 1px solid #bcc7d3;
+  border-bottom: 1px solid #bcc7d3;
+}
+.about-me .about .about-content .about-info li {
+  padding-right: 50px;
+}
+.about-me .about .about-content .about-info li p {
+  font-family: "jost-medium-font";
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.67;
+  color: #4d4d5c;
+  margin-bottom: 6px;
+}
+.about-me .about .about-content .about-info .details p {
+  font-weight: 700;
+}
+.about-me .about .about-content .about-footer .signature h6 {
+  margin-left: 28px;
+  font-size: 21px;
+}
+.about-me .about .about-content .about-footer .signature span {
+  color: #9b9db1;
+  font-family: "Open Sans", sans-serif;
+  margin-left: 10px;
+  font-size: 15px;
+}
+.about-me .about-text-style {
+  font-size: 310px;
+  bottom: 165px;
+  right: 68%;
+  z-index: -1;
+}
+.about-me .about-text-style span {
+  color: #e2ecf6;
+  transform: rotate(-90deg);
+}
+.about-me .portfolio-wrapper .porto-title span {
+  color: #80db66;
+  font-size: 22px;
+  letter-spacing: 7px;
+  font-weight: 600;
+}
+.about-me .portfolio-wrapper .porto-title h2 {
+  color: #2e2e37;
+  font-weight: 600;
+  font-size: 60px;
+  font-family: "jost-medium-font";
+}
+.about-me .portfolio-wrapper .web {
+  margin-top: 80px;
+}
+.about-me .portfolio-wrapper .web .single-port {
+  padding-top: 48px;
+  padding-bottom: 38px;
+  border-top: 1px solid #c8ccd4;
+}
+.about-me .portfolio-wrapper .web .single-port .port-cat span {
+  text-transform: uppercase;
+  color: #9b9db1;
+}
+.about-me .portfolio-wrapper .web .single-port .design h3 {
+  font-size: 48px;
+  line-height: 1.2;
+}
+.about-me .portfolio-wrapper .web .single-port .pic .port-img {
+  opacity: 0;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+.about-me .portfolio-wrapper .web .single-port .pic .port-img:hover {
+  opacity: 1;
+  transform: rotate(-30deg);
+  border-radius: 10px;
+  width: 200px;
+  height: 200px;
+  padding-right: 10rem;
+}
+.about-me .portfolio-wrapper .web .single-port .pic .port-content {
+  font-size: 25px;
+  cursor: pointer;
+  color: #80db66;
+  border: 1px solid #bcc7d3;
+  width: 95px;
+  height: 95px;
+  line-height: 95px;
+  border-radius: 50%;
+}
+.about-me .portfolio-wrapper .web .single-port .pic .port-content span {
+  padding-left: 35px;
+}
+
+.m-logo img {
+  margin-top: 1rem;
+  width: 153px;
+  margin-left: 11px;
 }/*# sourceMappingURL=thames.css.map */
